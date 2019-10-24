@@ -1,0 +1,258 @@
+/* Layout
+   ========================================================================== */
+/**
+ * Main container
+ * Set the container width, and override it for fixed navbars in media queries.
+ */
+.view {
+  position: relative;
+  height: 100%;
+  padding-right: calc(var(--view-padding) - (var(--grid-gutter) * 0.5));
+  padding-left: calc(var(--view-padding) - (var(--grid-gutter) * 0.5));
+}
+
+.main {
+  position: relative;
+  padding-top: var(--view-padding);
+  height: 100%;
+}
+
+.content-area {
+  position: relative;
+  height: 100%;
+}
+
+/**
+ * Container widths
+ * Set the container width, and override it for fixed navbars in media queries.
+ */
+.container {
+  display: block;
+  width: 100%;
+  /* max-width: 125rem; */
+  padding-right: calc(var(--grid-gutter) * 0.5);
+  padding-left: calc(var(--grid-gutter) * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/**
+ * Row
+ * Rows contain and clear the floats of your columns.
+ */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(var(--grid-gutter) * -0.5);
+  margin-left: calc(var(--grid-gutter) * -0.5);
+}
+
+/**
+ * Remove the negative margin from default .row, then the horizontal padding
+ * from all immediate children columns (to prevent runaway style inheritance).
+ */
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.no-gutters > [class*="col"] {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/**
+ * Columns
+ * Common styles for small and large grid columns
+ */
+/* @include make-grid-columns(); */
+
+.col,
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12,
+.col-auto {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: calc(var(--grid-gutter) * 0.5);
+  padding-left: calc(var(--grid-gutter) * 0.5);
+}
+
+.col {
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+
+.col-auto {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+}
+
+.col-1 {
+  flex: 0 0 8.33333%;
+  max-width: 8.33333%;
+}
+
+.col-2 {
+  flex: 0 0 16.66667%;
+  max-width: 16.66667%;
+}
+
+.col-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.col-4 {
+  flex: 0 0 33.33333%;
+  max-width: 33.33333%;
+}
+
+.col-5 {
+  flex: 0 0 41.66667%;
+  max-width: 41.66667%;
+}
+
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.col-7 {
+  flex: 0 0 58.33333%;
+  max-width: 58.33333%;
+}
+
+.col-8 {
+  flex: 0 0 66.66667%;
+  max-width: 66.66667%;
+}
+
+.col-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+.col-10 {
+  flex: 0 0 83.33333%;
+  max-width: 83.33333%;
+}
+
+.col-11 {
+  flex: 0 0 91.66667%;
+  max-width: 91.66667%;
+}
+
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.order-first {
+  order: -1;
+}
+
+.order-1 {
+  order: 1;
+}
+
+.order-2 {
+  order: 2;
+}
+
+.order-3 {
+  order: 3;
+}
+
+.order-4 {
+  order: 4;
+}
+
+.order-5 {
+  order: 5;
+}
+
+.order-6 {
+  order: 6;
+}
+
+.order-7 {
+  order: 7;
+}
+
+.order-8 {
+  order: 8;
+}
+
+.order-9 {
+  order: 9;
+}
+
+.order-10 {
+  order: 10;
+}
+
+.order-11 {
+  order: 11;
+}
+
+.order-12 {
+  order: 12;
+}
+
+.offset-1 {
+  margin-left: 8.33333%;
+}
+
+.offset-2 {
+  margin-left: 16.66667%;
+}
+
+.offset-3 {
+  margin-left: 25%;
+}
+
+.offset-4 {
+  margin-left: 33.33333%;
+}
+
+.offset-5 {
+  margin-left: 41.66667%;
+}
+
+.offset-6 {
+  margin-left: 50%;
+}
+
+.offset-7 {
+  margin-left: 58.33333%;
+}
+
+.offset-8 {
+  margin-left: 66.66667%;
+}
+
+.offset-9 {
+  margin-left: 75%;
+}
+
+.offset-10 {
+  margin-left: 83.33333%;
+}
+
+.offset-11 {
+  margin-left: 91.66667%;
+}
