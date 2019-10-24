@@ -1,4 +1,5 @@
 // Normalize
+import './variables.css'
 import './normalize.css'
 //
 import './base.css'
