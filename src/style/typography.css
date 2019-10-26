@@ -8,26 +8,18 @@ select,
 textarea {
   color: var(--color--body);
   font-family: var(--font-family--primary);
-  font-size: 1.875rem;
+  font-size: 1rem;
   font-weight: var(--font-weight--primary-regular);
   line-height: var(--spacing);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Use globaly to render text */
-label {
-  display: block;
-  margin: 0 0 var(--spacing);
-  padding: 0;
-}
-
 h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
+h5 {
   display: block;
   clear: both;
   font-weight: var(--font-weight--primary-bold);
@@ -36,46 +28,75 @@ h6 {
 }
 
 h1 {
-  clear: both;
-  margin: var(--spacing) 0 calc(var(--spacing) * 0.5);
-  line-height: calc(var(--spacing) * 3);
-  font-size: 5.625rem;
-  font-weight: var(--font-weight--primary-regular);
+  font-size: 2.8125rem;
+  line-height: calc(var(--spacing) * 2);
+}
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 3.375rem;
+    line-height: calc(var(--spacing) * 3);
+  }
 }
 
 h2 {
-  font-size: 3.125rem;
-  line-height: calc(var(--spacing) * 1.5);
-  margin: calc(var(--spacing) * 1.5) 0 var(--spacing);
+  font-size: 2.125rem;
+  line-height: calc(var(--spacing) * 2);
+}
+
+@media (min-width: 992px) {
+  h2 {
+    font-size: 2.8125rem;
+    line-height: calc(var(--spacing) * 2.5);
+  }
 }
 
 h3 {
-  font-size: 2.5rem;
-  line-height: var(--spacing);
-  text-transform: uppercase;
-  margin: var(--spacing) 0 calc(var(--spacing) * 0.75);
+  font-size: 1.875rem;
+  line-height: calc(var(--spacing) * 2);
+}
+
+@media (min-width: 992px) {
+  h3 {
+    font-size: 2.125rem;
+  }
 }
 
 h4 {
-  font-size: 2.25rem;
-  line-height: var(--spacing);
-  text-transform: uppercase;
+  font-size: 1.75rem;
+  font-weight: var(--font-weight--primary-regular);
+  line-height: calc(var(--spacing) * 1.5);
+}
+
+@media (min-width: 992px) {
+  h4 {
+    font-size: 1.875rem;
+  }
 }
 
 h5 {
-  font-size: 1.875rem;
-  line-height: var(--spacing);
-}
-
-h6 {
   font-size: 1.25rem;
+  font-weight: var(--font-weight--primary-regular);
   line-height: var(--spacing);
 }
 
+@media (min-width: 992px) {
+  h5 {
+    font-size: 1.5rem;
+    line-height: calc(var(--spacing) * 1.5);
+  }
+}
+
+h1 span,
+h2 span,
+h3 span,
+h4 span,
+h5 span {
+  color: var(--color--primary);
+}
 
 label {
-  font-size: 1.5rem;
-  margin-bottom: calc(var(--spacing) * 0.1);
+  font-size: 1rem;
   user-select: none;
 }
 

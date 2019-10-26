@@ -11,6 +11,10 @@ ul {
   list-style: disc;
 }
 
+ul.error-list {
+  color: var(--color--error);
+}
+
 ul.has-icons {
   list-style: none;
 }

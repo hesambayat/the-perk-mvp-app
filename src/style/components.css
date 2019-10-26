@@ -1,2 +1,16 @@
 /* Modules
    ========================================================================== */
+
+.avatar {
+  width: calc(var(--spacing) * 1.5);
+  height: calc(var(--spacing) * 1.5);
+  font-size: 1rem;
+  line-height: calc(var(--spacing) * 1.5);
+  border-radius: var(--spacing);
+  text-align: center;
+  text-transform: uppercase;
+  background-color: var(--color--primary);
+  color: var(--color--body-background);
+  cursor: default;
+  overflow: hidden;
+}

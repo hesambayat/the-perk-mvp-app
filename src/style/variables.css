@@ -14,10 +14,11 @@
 
   /* Colors */
   --color--body: #12181f;
-  --color--body-alt: #999999;
+  --color--body-alt: #c2c3c5;
   --color--body-background: #ffffff;
 
-  --color--primary: #d8a906;
-  --color--secondary: #64c164;
-  --color--tertiary: #f1f1f1;
+  --color--primary: #297cfb;
+  --color--secondary: #78708e;
+  --color--tertiary: #f4f5f7;
+  --color--error: #ff3950;
 }
