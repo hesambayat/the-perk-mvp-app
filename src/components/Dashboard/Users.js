@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from 'react'
-import { getUsers } from '../../api'
+import React from 'react'
+import { useQuery } from '@apollo/react-hooks'
+import { Queries } from '../../gql'
+import Errors from './Errors'
+import GiveRecognition from './GiveRecognition'
+import UsersTable from './UsersTable'
 
 export default () => {
-  const [users, setUsers] = useState()
-  useEffect(() => {
-    const load = async () => {
-      const users = await getUsers()
-
-      setUsers(users)
-    }
-
-    const emit = setTimeout(load, 0)
-    return () => clearTimeout(emit)
-  }, [])
-
-  if (users === undefined) {
-    return (<p>Loading...</p>)
-  }
-
+  const { data, error, loading } = useQuery(Queries.USERS, { errorPolicy: 'all' });
   return (
     <>
-      <h1>Users</h1>
-      {users && users.map(user => <p>{user}</p>)}
+      <div className="row">
+        <div className="col">
+          <h3>Employees</h3>
+        </div>
+        <div className="col-auto">
+          <GiveRecognition data={data} />
+        </div>
+      </div>
+      <Errors errors={error} />
+      <div className="card">
+        {loading && <p>Loading...</p>}
+        <UsersTable data={data} />
+      </div>
     </>
   )
 
