@@ -1,14 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-import * as Pages from './pages'
+import { ApolloProvider } from '@apollo/react-hooks'
+import { AppProviders } from './context'
+import { Client } from './lib'
+import App from './App'
 import * as serviceWorker from './serviceWorker';
 import './style'
 
 ReactDOM.render(
-  <Router>
-    <Route path="/" exact component={Pages.Dashboard} />
-  </Router>,
+  <ApolloProvider client={Client}>
+    <AppProviders>
+      <App />
+    </AppProviders>
+  </ApolloProvider>,
   document.getElementById('root')
 )
 
