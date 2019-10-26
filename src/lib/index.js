@@ -1,9 +1,5 @@
-import ApolloBoost, { gql } from 'apollo-boost'
-import Query from './Query'
+import Client from './Client'
+import RandomRgba from './RandomRgba'
 import Storage from './Storage'
 
-const Client = new ApolloBoost({
-  uri: 'http://localhost:3223'
-})
-
-export { Client, gql, Query, Storage }
+export { Client, RandomRgba, Storage }
