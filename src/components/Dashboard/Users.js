@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/react-hooks'
 import { Queries } from '../../gql'
 import Errors from './Errors'
 import GiveRecognition from './GiveRecognition'
+import AddNewUser from './AddNewUser'
 import UsersTable from './UsersTable'
 
 export default () => {
@@ -14,6 +15,7 @@ export default () => {
           <h3>Employees</h3>
         </div>
         <div className="col-auto">
+          <AddNewUser />
           <GiveRecognition data={data} />
         </div>
       </div>
