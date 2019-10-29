@@ -14,3 +14,43 @@
   cursor: default;
   overflow: hidden;
 }
+
+.card {
+  padding: var(--spacing) calc(var(--grid-gutter) * 0.5);
+  margin-bottom: var(--spacing);
+  border-radius: 5px;
+  border: 1px solid var(--color--tertiary);
+}
+
+.card__header {
+  margin-bottom: calc(var(--spacing) * 0.5);
+}
+
+.card__header label {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color--body-alt);
+  margin-bottom: var(--spacing);
+}
+
+.card__row {
+  padding-top: var(--spacing);
+  border-top: 1px solid var(--color--tertiary);
+}
+
+.card__row:not(:last-child) {
+  padding-bottom: var(--spacing);
+}
+
+.cba {
+  color: var(--color--body-alt);
+}
+
+.ellipsis {
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

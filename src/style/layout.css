@@ -68,8 +68,8 @@
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding-right: 24px;
-  padding-left: 24px;
+  padding-right: calc(var(--grid-gutter) * 0.5);
+  padding-left: calc(var(--grid-gutter) * 0.5);
 }
 
 .col {

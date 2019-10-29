@@ -54,7 +54,6 @@ input[type="password"] + input {
 .btn {
   display: inline-block;
   position: relative;
-  min-width: 13.125rem;
   max-width: 100%;
   height: auto;
   line-height: var(--spacing);
@@ -64,13 +63,19 @@ input[type="password"] + input {
   border: none;
   font-size: 0.9rem;
   font-weight: var(--font-weight--primary-bold);
-  padding: calc(var(--spacing) * 0.5) var(--spacing);
+  padding: calc(var(--spacing) * 0.5);
   border-radius: 3px;
   white-space: nowrap;
   color: var(--color--body-background);
   background: var(--color--primary);
   transition: box-shadow 500ms;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    min-width: 13.125rem;
+  }
 }
 
 .btn:not(.btn--deactive):hover {
@@ -84,8 +89,16 @@ input[type="password"] + input {
 
 .btn svg {
   display: inline-block;
-  vertical-align: sub;
-  fill: var(--color--body);
+  width: var(--spacing);
+  height: var(--spacing);
+  vertical-align: top;
+  fill: var(--color--body-background);
+}
+
+@media (min-width: 768px) {
+  .btn svg {
+    margin-right: calc(var(--spacing) * 0.5);
+  }
 }
 
 .btn:hover svg {
