@@ -6,6 +6,14 @@ const USERS = gql`
       id
       name
       rule
+      balance
+      department {
+        name
+      }
+      lastTransaction {
+        title
+        amount
+      }
       credits {
         title
         amount
