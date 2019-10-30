@@ -23,7 +23,7 @@ export default props => {
         </label>
       </div>
       <div className="col-4 col-md-2">
-        <label className="ellipsis">{FormatMoney(props.user.balance)}</label>
+        <label className="ellipsis" style={{ color: props.user.balance < 0 ? 'var(--color--error)' : 'var(--color--body)'}}>{FormatMoney(props.user.balance)}</label>
       </div>
     </div>
   )

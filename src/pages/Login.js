@@ -31,7 +31,13 @@ export default () => {
         <input ref={password} type="password" placeholder="Password" />
       </div>
       <Components.Errors errors={error} />
-      <button className={loading ? "btn btn--inprogress" : "btn"} onClick={loginCallback}>Login</button>
+      <button
+        className={loading ? "btn btn--inprogress" : "btn"}
+        style={{ minWidth: '13.125rem' }}
+        onClick={loginCallback}
+      >
+        Login
+      </button>
     </Centered>
   )
 }

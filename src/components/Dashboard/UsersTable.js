@@ -2,7 +2,7 @@ import React from 'react'
 import UserRow from './UserRow'
 
 export default props => {
-  if (props.data === undefined) return null
+  if (props.users === undefined) return null
   return (
     <>
       <div className="row card__header">
@@ -19,7 +19,7 @@ export default props => {
           <label className="ellipsis">Balanace</label>
         </div>
       </div>
-      {props.data.users.map(user => <UserRow key={user.id} user={user} />)}
+      {props.users.map(user => <UserRow key={user.id} user={user} />)}
     </>
   )
 }

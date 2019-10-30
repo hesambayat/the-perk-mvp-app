@@ -31,7 +31,7 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--color--body-alt);
-  margin-bottom: var(--spacing);
+  margin-bottom: calc(var(--spacing) * 0.5);
 }
 
 .card__row {

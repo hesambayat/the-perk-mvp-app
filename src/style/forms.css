@@ -54,6 +54,7 @@ input[type="password"] + input {
 .btn {
   display: inline-block;
   position: relative;
+  min-width: calc(var(--spacing) * 2);
   max-width: 100%;
   height: auto;
   line-height: var(--spacing);
@@ -72,12 +73,6 @@ input[type="password"] + input {
   overflow: hidden;
 }
 
-@media (min-width: 768px) {
-  .btn {
-    min-width: 13.125rem;
-  }
-}
-
 .btn:not(.btn--deactive):hover {
   box-shadow: 0 8px 16px 5px rgba(0,0,0, 0.15);
 }
@@ -89,12 +84,6 @@ input[type="password"] + input {
 .btn--secondary {
   color: var(--color--body-background);
   background: var(--color--secondary);
-}
-
-@media (min-width: 768px) {
-  .btn {
-    min-width: 7.125rem;
-  }
 }
 
 .btn--deactive {
