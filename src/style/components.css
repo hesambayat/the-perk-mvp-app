@@ -54,3 +54,28 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
+
+.inline-loading {
+  --a: #ebedf1;
+  --b: #e0e9ff;
+  height: 1rem;
+  margin: calc(var(--spacing) * 0.75) 0;
+  border-radius: 2px;
+  animation-duration: 1.8s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: linear;
+  background: linear-gradient(to right, var(--a) 8%, var(--b) 36%, var(--b) 40%, var(--a) 54%);
+  background-size: 1000px 640px;
+  position: relative;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
