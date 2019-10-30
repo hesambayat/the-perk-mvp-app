@@ -1,5 +1,35 @@
-import ApolloBoost from 'apollo-boost'
+import { split } from 'apollo-link'
+import { HttpLink } from 'apollo-link-http'
+import { ApolloClient } from 'apollo-client'
+import { WebSocketLink } from 'apollo-link-ws'
+import { getMainDefinition } from 'apollo-utilities'
+import { InMemoryCache } from 'apollo-cache-inmemory'
 
-export default new ApolloBoost({
-  uri: 'http://localhost:3223'
+const wsLink = new WebSocketLink({
+  uri: process.env.REACT_APP_WS_ENDPOINT,
+  options: {
+    reconnect: true,
+  },
+})
+
+const httpLink = new HttpLink({
+  uri: process.env.REACT_APP_HTTP_ENDPOINT,
+})
+
+const link = split(
+  // split based on operation type
+  ({ query }) => {
+    const definition = getMainDefinition(query)
+    return (
+      definition.kind === 'OperationDefinition' &&
+      definition.operation === 'subscription'
+    )
+  },
+  wsLink,
+  httpLink,
+)
+
+export default new ApolloClient({
+  cache: new InMemoryCache(),
+  link,
 })
