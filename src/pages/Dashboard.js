@@ -11,6 +11,9 @@ export default () => {
           <div className="col-12 col-xl-8">
             <Components.Users />
           </div>
+          <div className="col-12 col-xl-4">
+            <Components.AboutMvp />
+          </div>
         </div>
       </div>
     </>

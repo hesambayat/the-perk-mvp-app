@@ -100,6 +100,15 @@ label {
   user-select: none;
 }
 
+mark {
+  font-family: monospace;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  border-radius: 2px;
+  background-color: var(--color--tertiary);
+  color: var(--color--error);
+}
+
 /**
  * Text utils
  */

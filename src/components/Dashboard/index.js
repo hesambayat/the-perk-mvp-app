@@ -1,3 +1,4 @@
+import AboutMvp from './AboutMvp'
 import Users from './Users'
 
-export { Users }
+export { AboutMvp, Users }
