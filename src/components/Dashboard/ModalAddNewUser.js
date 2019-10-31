@@ -22,9 +22,11 @@ export default () => {
       }
     }).then(unSetModal)
   }, [loading, createUser, unSetModal])
-  console.log('%cquery', 'color:deeppink', query.data)
   return (
     <div className="row">
+      <div className="col-12">
+        <Errors errors={error} />
+      </div>
       <div className="col-12 col-xl-6 mb-2">
         <label className="label">Full name</label>
         <input ref={name} type="text" placeholder="John Doe" />
@@ -38,9 +40,6 @@ export default () => {
         <select ref={department}>
           {query.data && query.data.departments.map(department => <option key={department.id} value={department.id}>{department.name}</option>)}}
         </select>
-      </div>
-      <div className="col-12">
-        <Errors errors={error} />
       </div>
       <div className="col-12 text-right">
         <button
