@@ -95,6 +95,10 @@ h5 span {
   color: var(--color--primary);
 }
 
+p {
+  margin: 0 0 var(--spacing);
+}
+
 label {
   font-size: 1rem;
   user-select: none;

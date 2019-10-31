@@ -25,6 +25,12 @@ export default () => {
   return (
     <div className="row">
       <div className="col-12">
+        <h4 className="mt-0 mb-0">Add employee</h4>
+        <p style={{ color: 'var(--color--body-alt)'}}>
+          <small>You will be billed monthly for each employee you add.</small>
+        </p>
+      </div>
+      <div className="col-12">
         <Errors errors={error} />
       </div>
       <div className="col-12 col-xl-6 mb-2">
