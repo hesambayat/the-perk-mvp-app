@@ -17,6 +17,11 @@ export default () => {
       }
 
       const { data: { credit: { node } } } = subscriptionData
+
+      if (node === null) {
+        return
+      }
+
       const subscription = users.map(user => {
         if (node.creditTo.id === user.id) {
           return { ...user, lastTransaction: node, balance: user.balance + node.amount }
@@ -26,6 +31,21 @@ export default () => {
       })
 
       setUsers(subscription)
+    }
+  })
+  useSubscription(Subscription.USER, {
+    onSubscriptionData: ({ subscriptionData }) => {
+      if (users === undefined) {
+        return
+      }
+
+      const { data: { user: { node } } } = subscriptionData
+
+      if (node === null) {
+        return
+      }
+
+      setUsers([node, ...users])
     }
   })
   useEffect(() => {
