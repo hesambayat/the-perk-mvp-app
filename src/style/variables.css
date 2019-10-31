@@ -10,6 +10,7 @@
   /* Typography */
   --font-family--primary: -apple-system, BlinkMacSystemFont, "segoe ui", Roboto , "helvetica neue" , Arial, sans-serif, "apple color emoji", "segoe ui emoji", "segoe ui symbol";
   --font-weight--primary-regular: 400;
+  --font-weight--primary-semibold: 500;
   --font-weight--primary-bold: 700;
 
   /* Colors */

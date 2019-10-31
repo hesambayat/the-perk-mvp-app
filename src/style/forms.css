@@ -3,7 +3,8 @@
 
 input[type="text"],
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+select {
   display: block;
   padding: calc(var(--spacing) * 0.5) calc(var(--spacing) * 0.5) calc(var(--spacing) * 0.5) calc(var(--spacing) * 1.5);
   width: 100%;
@@ -34,10 +35,16 @@ input[type="password"] {
   background-image: url("../img/key.svg");
 }
 
+select {
+  padding: calc(var(--spacing) * 0.5) calc(var(--spacing) * 1.5) calc(var(--spacing) * 0.5) calc(var(--spacing) * 0.5);
+  background-position: center right calc(var(--spacing) * 0.5);
+  background-image: url("../img/unfold.svg");
+}
 
 input[type="text"]:focus,
 input[type="email"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+select:focus {
   background-color: var(--color--tertiary);
 }
 
@@ -70,15 +77,16 @@ input[type="password"] + input {
   color: var(--color--body-background);
   background: var(--color--primary);
   transition: box-shadow 250ms;
+  cursor: pointer;
   overflow: hidden;
 }
 
 .btn:not(.btn--deactive):hover {
-  box-shadow: 0 8px 16px 5px rgba(0,0,0, 0.15);
+  box-shadow: 0 8px 16px 5px rgba(0, 0, 0, 0.15);
 }
 
 .btn:not(.btn--deactive):active {
-  box-shadow: 0 3px 6px 2px rgba(0,0,0, 0.25);
+  box-shadow: 0 3px 6px 2px rgba(0, 0, 0, 0.25);
 }
 
 .btn--secondary {
@@ -89,6 +97,21 @@ input[type="password"] + input {
 .btn--deactive {
   color: var(--color--body-alt);
   background: var(--color--tertiary);
+}
+
+.btn--link {
+  color: var(--color--secondary);
+  background: var(--color--body-background);
+}
+
+.btn--link.btn--deactive {
+  color: var(--color--body-alt);
+  background: var(--color--body-background);
+}
+
+.btn--link:not(.btn--deactive):hover {
+  color: var(--color--primary);
+  box-shadow: none;
 }
 
 .btn svg {
@@ -126,4 +149,13 @@ input[type="password"] + input {
   background-position: center;
   background-image: url("../img/loading.svg");
   pointer-events: none;
+}
+
+.label {
+  display: block;
+  margin-bottom: calc(var(--spacing) * 0.125);
+  font-size: 0.8rem;
+  font-weight: var(--font-weight--primary-semibold);
+  text-transform: uppercase;
+  user-select: none;
 }

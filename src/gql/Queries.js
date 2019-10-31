@@ -1,5 +1,14 @@
 import gql from 'graphql-tag'
 
+const DEPARTMENTS = gql`
+  query {
+    departments {
+      id
+      name
+    }
+  }
+`
+
 const USERS = gql`
   query {
     users {
@@ -22,4 +31,4 @@ const USERS = gql`
   }
 `
 
-export { USERS }
+export { DEPARTMENTS, USERS }
