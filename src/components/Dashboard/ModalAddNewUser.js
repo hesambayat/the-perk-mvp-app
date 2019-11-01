@@ -79,7 +79,7 @@ export default () => {
         <button
           className={`btn btn--secondary ${loading ? 'btn--inprogress' : ''} ${query.loading ? 'btn--deactive' : ''}`}
           style={{
-            minWidth: '7.125rem'
+            minWidth: '8.125rem'
           }}
           onClick={() => {
             !query.loading && createUserCallback()

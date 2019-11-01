@@ -45,13 +45,43 @@
 }
 
 .modal__close-btn svg {
-  width: calc(var(--spacing) * 0.75);
-  height: calc(var(--spacing) * 0.75);
+  width: var(--spacing);
+  height: var(--spacing);
   fill: var(--color--body-alt);
 }
 
 .modal__close-btn:hover svg {
   fill: var(--color--body);
+}
+
+.radio-recognition input {
+  display: none;
+}
+
+.radio-recognition span {
+  display: block;
+  position: relative;
+  height: calc(var(--spacing) * 3);
+  margin-bottom: var(--spacing);
+  border-radius: 5px;
+  border: 1px solid var(--color--tertiary);
+  color: var(--color--body-alt);
+  pointer-events: none;
+}
+
+.radio-recognition strong {
+  position: absolute;
+  font-size: 1.125rem;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.radio-recognition input:checked + span {
+  color: var(--color--primary);
+  border-color: var(--color--primary);
+  border-width: 2px;
+  z-index: 9;
 }
 
 .avatar {

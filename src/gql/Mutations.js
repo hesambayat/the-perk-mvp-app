@@ -1,5 +1,21 @@
 import gql from 'graphql-tag'
 
+const CREATE_CREDIT = gql`
+  mutation CreateUser($user: ID!, $amount: String!, $title: String!) {
+    createCredit(data: {
+      title: $title
+      amount: $amount
+      creditTo: {
+        connect: {
+          id: $user
+        }
+      }
+    }) {
+      id
+    }
+  }
+`
+
 const CREATE_USER = gql`
   mutation CreateUser($department: ID, $email: String!, $name: String!) {
     createUser(data: {
@@ -37,4 +53,4 @@ const LOGIN = gql`
   }
 `
 
-export { CREATE_USER, LOGIN }
+export { CREATE_CREDIT, CREATE_USER, LOGIN }
