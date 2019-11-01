@@ -3,6 +3,7 @@ import Select from 'react-select'
 import { useMutation, useQuery } from '@apollo/react-hooks'
 import { Mutations, Queries } from '../../gql'
 import { useModal } from '../../context/modal-context'
+import selectStyles from '../../style/select-styles'
 import Errors from './Errors'
 
 export default () => {
@@ -57,6 +58,7 @@ export default () => {
         <Select
           isSearchable
           placeholder="Select a department"
+          styles={selectStyles}
           noOptionsMessage={({ inputValue }) => inputValue ? "Nothing found!" : "Loading..."}
           onChange={({ value }) => department.current = { value }}
           options={options}
