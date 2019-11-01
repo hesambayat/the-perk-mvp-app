@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 
 const CREATE_USER = gql`
-  mutation CreateUser($department: ID!, $email: String!, $name: String!) {
+  mutation CreateUser($department: ID, $email: String!, $name: String!) {
     createUser(data: {
       name: $name
       email: $email

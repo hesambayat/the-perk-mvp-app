@@ -1,4 +1,5 @@
 import React, { useCallback, useRef } from 'react'
+import Select from 'react-select'
 import { useMutation, useQuery } from '@apollo/react-hooks'
 import { Mutations, Queries } from '../../gql'
 import { useModal } from '../../context/modal-context'
@@ -7,7 +8,7 @@ import Errors from './Errors'
 export default () => {
   const name = useRef()
   const email = useRef()
-  const department = useRef()
+  const department = useRef({})
   const { unSetModal } = useModal()
   const [createUser, { error, loading }] = useMutation(Mutations.CREATE_USER, { errorPolicy: 'all' })
   const query = useQuery(Queries.DEPARTMENTS, { errorPolicy: 'all' })
@@ -22,11 +23,21 @@ export default () => {
       }
     }).then(unSetModal)
   }, [loading, createUser, unSetModal])
+  const options = []
+  if (query.data) {
+    query.data.departments.forEach(({ id: value, name: label }) => {
+      options.push({
+        value,
+        label
+      })
+    })
+  }
+
   return (
     <div className="row">
       <div className="col-12">
         <h4 className="mt-0 mb-0">Add employee</h4>
-        <p style={{ color: 'var(--color--body-alt)'}}>
+        <p style={{ color: 'var(--color--body-alt)' }}>
           <small>You will be billed monthly for each employee you add.</small>
         </p>
       </div>
@@ -43,9 +54,13 @@ export default () => {
       </div>
       <div className="col-12 mb-4">
         <label className="label">Department</label>
-        <select ref={department}>
-          {query.data && query.data.departments.map(department => <option key={department.id} value={department.id}>{department.name}</option>)}}
-        </select>
+        <Select
+          isSearchable
+          placeholder="Select a department"
+          noOptionsMessage={({ inputValue }) => inputValue ? "Nothing found!" : "Loading..."}
+          onChange={({ value }) => department.current = { value }}
+          options={options}
+        />
       </div>
       <div className="col-12 text-right">
         <button
@@ -62,7 +77,7 @@ export default () => {
         <button
           className={`btn btn--secondary ${loading ? 'btn--inprogress' : ''} ${query.loading ? 'btn--deactive' : ''}`}
           style={{
-            minWidth: '13.125rem'
+            minWidth: '7.125rem'
           }}
           onClick={() => {
             !query.loading && createUserCallback()
